@@ -161,6 +161,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Shift+ü move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
+
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 3
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -214,15 +221,15 @@ bar {
         font pango:DejaVu Sans Mono 10
         separator_symbol " "
         colors {
-                background #222333
+                background #2a273f
                 statusline #ffffff
                 separator #ffffff
 
-                focused_workspace  #4c7899 #2B5489 #ffffff
-                active_workspace   #333333 #5f676a #ffffff
-                inactive_workspace #192331 #111111 #888888
-                urgent_workspace   #D32F2F #900000 #ffffff
-                binding_mode       #D32F2F #900000 #ffffff
+                focused_workspace  #393522 #ea9a97 #000000
+                active_workspace   #393522 #ea9a97 #e0def4
+                inactive_workspace #393522 #111111 #e0def4
+                urgent_workspace   #393522 #ea9a97 #e0def4
+                binding_mode       #D32F2F #900000 #e0def4
         }
         padding 3px 0
         tray_output primary
@@ -237,6 +244,7 @@ gaps inner 10
 
 for_window [title="Application Finder"] floating enable resize set 640 480
 for_window [title="Nitrogen"] floating enable resize set 640 480
+
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #f200ff #f200ff #ffffff #f200ff   #f200ff
@@ -271,3 +279,5 @@ client.unfocused         $text     $base $text  $overlay   $overlay
 client.urgent            $text     $base $text  $love      $love
 client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
+
+

@@ -120,6 +120,7 @@
     pkgs.tree-sitter-grammars.tree-sitter-latex
     (python3.withPackages (ps: with ps; [ pandas ]))
     pkgs.nodejs_21
+    pkgs.killall 
   ];
   programs.neovim = {
     enable = true;
