@@ -17,7 +17,7 @@ general {
 }
 
 order += "volume master"
-order += "wireless _first_"
+#order += "wireless _first_"
 #order += "disk /"
 order += "memory"
 #order += "cpu_temperature 0"
