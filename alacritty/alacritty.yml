@@ -1,1 +1,14 @@
-/home/stefiii/dotfiles/alacrittyconf
+live_config_reload: true
+
+window:
+  title: tiger
+  opacity: 0.69
+
+font:
+  size: 20
+
+shell:
+  program: /home/stefiii/.nix-profile/bin/tmux 
+
+import:
+  - /home/stefiii/.config/alacritty/rose-pine-moon.yml
