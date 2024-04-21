@@ -40,29 +40,6 @@
   sound.enable = true;
 
   services = {
-    xserver = {
-      layout = "de";
-      xkbVariant = "";
-      enable = true;
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          i3status
-        ];
-      };
-      desktopManager = {
-        xterm.enable = false;
-        xfce = {
-          enable = true;
-          noDesktop = true;
-          enableXfwm = false;
-        };
-      };
-      displayManager = {
-        lightdm.enable = true;
-        defaultSession = "xfce+i3";
-      };
-    };
     gvfs.enable = true;
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
@@ -75,6 +52,25 @@
       pulse.enable = true;
     };
   };
+
+  
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session.command = ''
+          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+          --time \
+          --asterisks \
+          --user-menu \
+          --cmd sway
+          '';
+      };
+    };
+
+    environment.etc."greetd/environments".text = ''
+      sway
+      '';
+   
 
   nixpkgs = {
     config = {
@@ -98,6 +94,16 @@
     dmenu
     git
     nerdfonts
+    pkgs.font-awesome
+    pamixer
+    pkgs.fira-code-symbols
+    pkgs.fira-code-nerdfont
+    pkgs.jetbrains-mono
+    pkgs.material-design-icons
+    pkgs.material-icons
+    pkgs.material-symbols
+    pkgs.material-black-colors
+    dunst
     networkmanagerapplet
     nitrogen
     pasystray
@@ -105,7 +111,6 @@
     polkit_gnome
     pulseaudioFull
     rofi
-    vim
     zip
     unrar
     unzip
@@ -121,11 +126,23 @@
     (python3.withPackages (ps: with ps; [ pandas ]))
     pkgs.nodejs_21
     pkgs.killall 
+    pkgs.waypaper
+    pkgs.swaybg
+    pkgs.swayrbar
+    pkgs.swaylock
+    pkgs.waybar
+    pkgs.upower
+    pkgs.wofi
+    pkgs.xdg-desktop-portal
   ];
   programs.neovim = {
     enable = true;
     withPython3 = true;
     defaultEditor = true;
+  };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
   };
 
   programs.steam.enable = true;
@@ -137,7 +154,7 @@
     thunar.enable = true;
     dconf.enable = true;
   };
-
+  #console.keyMap = "at";
   security = {
     polkit.enable = true;
     rtkit.enable = true;
