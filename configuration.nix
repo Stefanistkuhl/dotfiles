@@ -79,15 +79,16 @@
     };
   };
 
-  # Edit the username below (replace 'neeraj')
   users.users.stefiii = {
     isNormalUser = true;
     description = "stefiii";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
       xarchiver
     ];
   };
+  programs.zsh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     alacritty
@@ -119,6 +120,7 @@
     zsh
     fzf
     steam
+    flameshot
     pkgs.libreoffice
     pkgs.texliveMedium
     pkgs.zathura
@@ -134,6 +136,12 @@
     pkgs.upower
     pkgs.wofi
     pkgs.xdg-desktop-portal
+    pkgs.xdg-desktop-portal-wlr
+    pkgs.grim
+    pkgs.obsidian
+    nix-output-monitor
+    nvd
+    stow
   ];
   programs.neovim = {
     enable = true;
@@ -144,12 +152,20 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
-
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  }; 
   programs.steam.enable = true;
   nix.optimise.automatic = true;
   nix.settings.auto-optimise-store = true;
   services.flatpak.enable = true;
-  xdg.portal.enable = true;
+  #xdg.portal.enable = true;
   programs = {
     thunar.enable = true;
     dconf.enable = true;
@@ -160,6 +176,9 @@
     rtkit.enable = true;
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";

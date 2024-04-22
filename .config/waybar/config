@@ -74,7 +74,7 @@
         "format-bluetooth": "",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
-        "format-muted": "婢 ",
+        "format-muted": "婢",
         "format-icons": {
             "headphone": "",
             "default": ["奄","奔",""]
