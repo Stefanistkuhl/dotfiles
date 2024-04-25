@@ -25,6 +25,7 @@
         "tooltip-format": "{title}"
     },
     "sway/workspaces": {
+	"all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
@@ -37,9 +38,7 @@
             "6": "6",
             "7": "7",
             "8": "8",
-            "9": "9",
-            "active": "󱓻",
-            "urgent": "󱓻"
+            "9": "9"
         },
     },
     "memory": {
@@ -53,7 +52,7 @@
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
         "format-alt": "  {:%a, %d %b %Y}",
-        "format": "{:%H:%M %p}"
+        "format": "{:%H:%M}"
     },
     "network": {
         "format-wifi" : "{icon}",

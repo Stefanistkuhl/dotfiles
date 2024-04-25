@@ -262,3 +262,6 @@ input "type:keyboard" {
     xkb_variant ,nodeadkeys
     xkb_options grp:alt_shift_toggle
 }
+
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw

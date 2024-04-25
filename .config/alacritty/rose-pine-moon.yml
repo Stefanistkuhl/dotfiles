@@ -3,7 +3,7 @@ colors:
     background: "0x232136"
     foreground: "0xe0def4"
   #cursor:
-    #  text: "0xe0def4"
+    #text: "0xe0def4"
     cursor: "0x56526e"
   vi_mode_cursor:
     text: "0xe0def4"

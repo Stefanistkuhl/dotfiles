@@ -12,8 +12,8 @@
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [];
-      allowedUDPPorts = [];
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
     };
     hostName = "Stefiii";
     networkmanager.enable = true;
@@ -21,6 +21,7 @@
 
   # edit as per your location and timezone
   time.timeZone = "Europe/Vienna";
+  services.automatic-timezoned.enable = true;
   i18n = {
     defaultLocale = "de_AT.utf8";
     extraLocaleSettings = {
@@ -33,9 +34,11 @@
       LC_PAPER = "de_AT.utf8";
       LC_TELEPHONE = "de_AT.utf8";
       LC_TIME = "de_AT.utf8";
-      LC_CTYPE="en_US.utf8"; # required by dmenu don't change this
+      LC_CTYPE = "en_US.utf8"; # required by dmenu don't change this
     };
   };
+
+
 
   sound.enable = true;
 
@@ -53,24 +56,24 @@
     };
   };
 
-  
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session.command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --time \
-          --asterisks \
-          --user-menu \
-          --cmd sway
-          '';
-      };
-    };
 
-    environment.etc."greetd/environments".text = ''
-      sway
-      '';
-   
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session.command = ''
+  #       ${pkgs.greetd.tuigreet}/bin/tuigreet \
+  #       --time \
+  #       --asterisks \
+  #       --user-menu \
+  #       --cmd sway
+  #       '';
+  #   };
+  # };
+
+  environment.etc."greetd/environments".text = ''
+    sway
+  '';
+
 
   nixpkgs = {
     config = {
@@ -78,12 +81,16 @@
       pulseaudio = true;
     };
   };
-
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 10d";
+  };
   users.users.stefiii = {
     isNormalUser = true;
     description = "stefiii";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       xarchiver
     ];
@@ -91,7 +98,8 @@
   programs.zsh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
-    alacritty
+    pkgs.alacritty
+    pkgs.home-manager
     dmenu
     git
     nerdfonts
@@ -104,7 +112,7 @@
     pkgs.material-icons
     pkgs.material-symbols
     pkgs.material-black-colors
-    dunst
+    pkgs.swaynotificationcenter
     networkmanagerapplet
     nitrogen
     pasystray
@@ -127,7 +135,7 @@
     pkgs.tree-sitter-grammars.tree-sitter-latex
     (python3.withPackages (ps: with ps; [ pandas ]))
     pkgs.nodejs_21
-    pkgs.killall 
+    pkgs.killall
     pkgs.waypaper
     pkgs.swaybg
     pkgs.swayrbar
@@ -139,9 +147,14 @@
     pkgs.xdg-desktop-portal-wlr
     pkgs.grim
     pkgs.obsidian
-    nix-output-monitor
-    nvd
     stow
+    pkgs.qview
+    fastfetch
+    pkgs.libsForQt5.qt5.qtgraphicaleffects
+    pkgs.libsForQt5.qt5.qtquickcontrols2
+    pkgs.libsForQt5.sddm
+    pkgs.starship
+    zoxide
   ];
   programs.neovim = {
     enable = true;
@@ -160,9 +173,14 @@
         xdg-desktop-portal-gtk
       ];
     };
-  }; 
+  };
   programs.steam.enable = true;
   nix.optimise.automatic = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver = {
+    enable = true;
+    xkb.layout = "de";
+  };
   nix.settings.auto-optimise-store = true;
   services.flatpak.enable = true;
   #xdg.portal.enable = true;
@@ -200,5 +218,5 @@
   };
 
   # Don't touch this
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

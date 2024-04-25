@@ -19,7 +19,10 @@ window#waybar.hidden {
 #workspaces {
   background-color: transparent;
 }
-
+#workspaces button.current_output.focused {
+  color: #1e1e2e;
+  background: #cdd6f4;
+}
 #workspaces button {
   all: initial; /* Remove GTK theme values (waybar #1351) */
   min-width: 0; /* Fix weird spacing in materia (waybar #450) */
