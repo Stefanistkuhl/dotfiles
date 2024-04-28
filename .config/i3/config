@@ -57,8 +57,7 @@ bindsym $mod+Shift+f exec --no-startup-id "thunar"
 # bindsym $mod+b exec --no-startup-id "brave" 
 bindsym $mod+shift+x exec swaylock 
 
-        bindsym $mod+shift+s exec flameshot gui
-
+        bindsym $mod+shift+s exec grim -g "$(slurp)" - | swappy -f -
         bindsym $mod+shift+w exec firefox
         bindsym $mod+shift+o exec obsidian 
         #bindsym $mod+shift+g exec signal-dekstop 

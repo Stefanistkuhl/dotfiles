@@ -133,7 +133,7 @@
     pkgs.texliveMedium
     pkgs.zathura
     pkgs.tree-sitter-grammars.tree-sitter-latex
-    (python3.withPackages (ps: with ps; [ pandas ]))
+    (python3.withPackages (ps: with ps; [ pandas matplotlib seaborn numpy ]))
     pkgs.nodejs_21
     pkgs.killall
     pkgs.waypaper
@@ -155,7 +155,13 @@
     pkgs.libsForQt5.sddm
     pkgs.starship
     zoxide
+    pkgs.wl-clipboard
+    pkgs.slurp
+    pkgs.imagemagick
+    pkgs.swappy
+    kitty
   ];
+  programs.hyprland.enable = true;
   programs.neovim = {
     enable = true;
     withPython3 = true;
