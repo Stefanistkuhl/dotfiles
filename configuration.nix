@@ -128,7 +128,6 @@
     zsh
     fzf
     steam
-    flameshot
     pkgs.libreoffice
     pkgs.texliveMedium
     pkgs.zathura
@@ -161,6 +160,7 @@
     pkgs.swappy
     kitty
     pkgs.uwufetch
+    pkgs.cliphist
   ];
   programs.hyprland.enable = true;
   programs.neovim = {
