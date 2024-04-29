@@ -160,6 +160,7 @@
     pkgs.imagemagick
     pkgs.swappy
     kitty
+    pkgs.uwufetch
   ];
   programs.hyprland.enable = true;
   programs.neovim = {

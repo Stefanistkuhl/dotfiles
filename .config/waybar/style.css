@@ -1,3 +1,4 @@
+@import "./rose-pine-moon.css";
 * {
   border: none;
   border-radius: 0;
@@ -7,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: #181825;
+  background-color: @surface;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -20,8 +21,8 @@ window#waybar.hidden {
   background-color: transparent;
 }
 #workspaces button.current_output.focused {
-  color: #1e1e2e;
-  background: #cdd6f4;
+  color: @iris;
+  background: @text;
 }
 #workspaces button {
   all: initial; /* Remove GTK theme values (waybar #1351) */
@@ -31,23 +32,23 @@ window#waybar.hidden {
   margin: 6px 3px;
   border-radius: 4px;
   background-color: #1e1e2e;
-  color: #cdd6f4;
+  color: @text;
 }
 
 #workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: @base;
+  background-color: @iris;
 }
 
 #workspaces button:hover {
  box-shadow: inherit;
  text-shadow: inherit;
  color: #1e1e2e;
- background-color: #cdd6f4;
+ background-color: @iris;
 }
 
 #workspaces button.urgent {
-  background-color: #f38ba8;
+  background-color: @gold;
 }
 
 #memory,
@@ -61,8 +62,8 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 6px 3px;
   padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+  background-color: @base;
+  color: @text;
 }
 
 #custom-power {
@@ -79,10 +80,10 @@ window#waybar.hidden {
 }
 
 #memory {
-  background-color: #fab387;
+  background-color: @base;
 }
 #battery {
-  background-color: #f38ba8;
+  background-color: @base;
 }
 @keyframes blink {
   to {
@@ -103,15 +104,15 @@ window#waybar.hidden {
   animation-direction: alternate;
 }
 #battery.charging {
-  background-color: #a6e3a1;
+  background-color: @base;
 }
 
 #backlight {
-  background-color: #fab387;
+  background-color: @base;
 }
 
 #pulseaudio {
-  background-color: #f9e2af;
+  background-color: @base;
 }
 
 #network {
@@ -121,11 +122,11 @@ window#waybar.hidden {
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
-  background-color: #cba6f7;
+  background-color: @base;
 }
 
 #custom-power {
-  background-color: #f2cdcd;
+  background-color: @base;
 }
 
 
