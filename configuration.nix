@@ -158,9 +158,12 @@
     pkgs.slurp
     pkgs.imagemagick
     pkgs.swappy
-    kitty
     pkgs.uwufetch
     pkgs.cliphist
+    zoxide
+    pkgs.hyfetch
+    nsnake
+    bastet
   ];
   programs.hyprland.enable = true;
   programs.neovim = {
