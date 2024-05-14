@@ -70,9 +70,9 @@
   #   };
   # };
 
-  environment.etc."greetd/environments".text = ''
-    sway
-  '';
+  # environment.etc."greetd/environments".text = ''
+  #   sway
+  # '';
 
 
   nixpkgs = {
@@ -95,7 +95,7 @@
       xarchiver
     ];
   };
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     pkgs.alacritty
@@ -116,24 +116,23 @@
     networkmanagerapplet
     nitrogen
     pasystray
-    picom
     polkit_gnome
     pulseaudioFull
     rofi
     zip
     unrar
+    tlp
     unzip
     neovim
     signal-desktop
     zsh
     fzf
     steam
-    pkgs.libreoffice
-    pkgs.texliveMedium
+    pkgs.texliveFull
     pkgs.zathura
     pkgs.tree-sitter-grammars.tree-sitter-latex
     (python3.withPackages (ps: with ps; [ pandas matplotlib seaborn numpy ]))
-    pkgs.nodejs_21
+    pkgs.nodejs
     pkgs.killall
     pkgs.waypaper
     pkgs.swaybg
@@ -149,6 +148,7 @@
     stow
     pkgs.qview
     fastfetch
+    libreoffice
     pkgs.libsForQt5.qt5.qtgraphicaleffects
     pkgs.libsForQt5.qt5.qtquickcontrols2
     pkgs.libsForQt5.sddm
@@ -174,6 +174,14 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+  };
+  programs = {
+    zsh = {
+      enable = true;
+      interactiveShellInit = ''
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      '';
+    };
   };
   xdg = {
     portal = {
@@ -207,6 +215,27 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
+  services.thermald.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+
+      #Optional helps save long term battery health
+      # START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      # STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+
+    };
+  };
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
