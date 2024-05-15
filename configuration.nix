@@ -178,9 +178,9 @@
   programs = {
     zsh = {
       enable = true;
-      interactiveShellInit = ''
-        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-      '';
+      # interactiveShellInit = ''
+      #   source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      # '';
     };
   };
   xdg = {
