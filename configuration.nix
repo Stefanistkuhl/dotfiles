@@ -56,7 +56,6 @@
     };
   };
 
-
   # services.greetd = {
   #   enable = true;
   #   settings = {
@@ -164,6 +163,8 @@
     pkgs.hyfetch
     nsnake
     bastet
+    wireplumber
+    pavucontrol
   ];
   programs.hyprland.enable = true;
   programs.neovim = {
