@@ -47,7 +47,8 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 #tiling_drag modifier titlebar
-
+#exec --no-startup-id feh --bg-scale ~/wallpapers/nixos.png
+exec --no-startup-id feh --bg-scale ~/wallpapers/complete-8.png
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -256,11 +257,66 @@ client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
 
 # or input <identifier>
-input "type:keyboard" {
-    xkb_layout de
-    xkb_variant ,nodeadkeys
-    xkb_options grp:alt_shift_toggle
+bar {
+        status_command i3status
+        position top
+        font pango:DejaVu Sans Mono 10
+        separator_symbol " "
+        colors {
+                background #222333
+                statusline #ffffff
+                separator #ffffff
+
+                focused_workspace  #4c7899 #2B5489 #ffffff
+                active_workspace   #333333 #5f676a #ffffff
+                inactive_workspace #192331 #111111 #888888
+                urgent_workspace   #D32F2F #900000 #ffffff
+                binding_mode       #D32F2F #900000 #ffffff
+        }
+        padding 3px 0
+        tray_output primary
+        tray_padding 5px
+        workspace_min_width 50
 }
 
-exec swaync
-bindsym $mod+Shift+n exec swaync-client -t -sw
+# for_window [all] title_window_icon on
+default_border pixel 3
+default_floating_border pixel 3
+gaps inner 10
+
+for_window [title="Application Finder"] floating enable resize set 640 480
+for_window [title="Nitrogen"] floating enable resize set 640 480
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #f200ff #f200ff #ffffff #f200ff   #f200ff
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #ff00ee #ff00ee #ffffff #ff00ee   #ff00ee
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+# set primary Rosé Pine Moon colorscheme colors
+set $base           #232136
+set $surface        #2a273f
+set $overlay        #393552
+set $muted          #6e6a86
+set $subtle         #908caa
+set $text           #e0def4
+set $love           #eb6f92
+set $gold           #f6c177
+set $rose           #ea9a97
+set $pine           #3e8fb0
+set $foam           #9ccfd8
+set $iris           #c4a7e7
+set $highlightlow   #2a283e
+set $highlightmed   #44415a
+set $highlighthigh  #56526e
+
+# Teming border and Windows --------------
+# target                 title     bg    text   indicator  border
+client.focused           $rose     $base $text  $rose      $rose
+client.focused_inactive  $text     $base $text  $subtle    $surface
+client.unfocused         $text     $base $text  $overlay   $overlay
+client.urgent            $text     $base $text  $love      $love
+client.placeholder       $base     $base $text  $overlay   $overlay
+client.background        $base

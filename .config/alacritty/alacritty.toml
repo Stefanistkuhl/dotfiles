@@ -6,8 +6,10 @@ title = "tiger"
 opacity = 0.69
 
 [font]
-size = 10
+size = 15
+normal = { family = "Jetbrains Mono", style = "mono" }
 
 [shell]
-program = "/home/stefiii/.nix-profile/bin/tmux"
+program = "/usr/bin/tmux"
+
 

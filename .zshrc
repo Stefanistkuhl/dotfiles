@@ -111,3 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+alias vim="nvim"
+alias ff="hyfetch -b fastfetch"
+alias hy="hyfetch -b fastfetch"
+alias twink="hyfetch -b fastfetch"
+alias :3="hyfetch -b fastfetch"
