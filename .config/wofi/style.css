@@ -2,7 +2,7 @@ window {
     margin: 0px;
     background-color: #232136;
     border-radius: 0px;
-    border: 2px solid #eb6f92;
+    /* border: 2px solid #eb6f92; */
     color: #e0def4;
     font-family: 'Monofur Nerd Font';
     font-size: 20px;
@@ -26,11 +26,11 @@ window {
     border-radius: 0px;
 }
 
-#outer-box {
-    margin: 15px;
-    border: none;
-    background-color: #232136;
-}
+/* #outer-box { */
+/*     margin: 15px; */
+/*     border: none; */
+/*     background-color: #232136; */
+/* } */
 
 #scroll {
     margin: 0px;

@@ -112,7 +112,16 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 alias vim="nvim"
+alias v="nvim"
 alias ff="hyfetch -b fastfetch"
 alias hy="hyfetch -b fastfetch"
 alias twink="hyfetch -b fastfetch"
 alias :3="hyfetch -b fastfetch"
+alias spotify="spotify-launcher"
+alias sp="spotify-launcher"
+alias obsidian="obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias ob="obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias discord="discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias dc="discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
+figlet oida | cowsay -n
+export PATH=$PATH:$HOME/go/bin
