@@ -6,7 +6,7 @@ title = "tiger"
 opacity = 0.69
 
 [font]
-size = 15
+size = 12
 normal = { family = "Jetbrains Mono", style = "mono" }
 
 [shell]
