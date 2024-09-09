@@ -1,0 +1,14 @@
+material-icon-theme-git
+nbfc-linux
+qview
+rose-pine-cursor
+rose-pine-hyprcursor
+texlive-full
+tofi
+ttf-material-design-icons-git
+twingate-bin
+ungoogled-chromium-bin
+waypaper
+winbox
+yay
+yay-debug
