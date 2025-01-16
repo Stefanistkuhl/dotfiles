@@ -1,1 +1,0 @@
-hypr/handle_monitor_connect.sh
