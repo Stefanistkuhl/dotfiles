@@ -42,7 +42,7 @@
     },
     "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": "󰍛 {}%",
         "max-length": 10
     },
     "tray": {
@@ -51,7 +51,8 @@
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
         "format-alt": "  {:%a, %d %b %Y}",
-        "format": "{:%H:%M}"
+        "format": "{:%H:%M}",
+	"timezone": "Europe/Vienna"
     },
     "network": {
         "format-wifi" : "{icon}",
@@ -72,10 +73,10 @@
         "format-bluetooth": "",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
-        "format-muted": "婢",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "default": ["奄","奔",""]
+            "default": ["󰕿","",""]
         },
         "on-click": "pamixer -t",
         "scroll-step": 1
@@ -84,23 +85,23 @@
         "format": "{capacity}% {icon}",
         "format-icons": {
             "charging": [
-                "",
-                "",
-                " ",
-                " ",
-                " "
+                "󰢜",
+                "󰂇",
+                "󰢝",
+                "󰢞",
+                "󰂋"
             ],
             "default": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
             ]
         },
         "format-full": "Charged ",

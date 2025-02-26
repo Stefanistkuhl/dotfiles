@@ -1,0 +1,4 @@
+[Default]
+save_dir=$HOME/Bilder/screens/
+save_filename_format=screen-%Y%m%d-%H%M.png
+show_panel=false

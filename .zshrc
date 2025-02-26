@@ -5,6 +5,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$PATH:/home/stefiii/.cargo/bin 
 PATH="$PATH":"$HOME/.local/scripts/"
+export LANG=en_US.UTF-8
+export EDITOR="nvim"
 #export ANDROID_HOME=/home/stefiii/Android/Sdk
 #path+=('/home/stefiii/Android/Sdk/platform-tools')
 #path=('/home/stefiii/Android/Sdk/platform-tools' $path)
@@ -111,3 +113,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+alias vim="nvim"
+alias v="nvim"
+alias ff="hyfetch -b fastfetch"
+alias hy="hyfetch -b fastfetch"
+alias :3="hyfetch -b fastfetch"
+figlet oida | cowsay -n
+export PATH=$PATH:$HOME/go/bin
+alias sudo="run0"
+alias yay="paru"
+alias itsi="cp -r ~/obsidianschule/latex/template/itsi/* ."
+alias nwt="cp -r ~/obsidianschule/latex/template/nwt/* ."
+
