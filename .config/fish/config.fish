@@ -17,5 +17,7 @@ if status is-interactive
     alias putty='sudo cu -l /dev/ttyUSB0 -s 9600'
     alias ls='eza'
     alias t='tmux attach -t blank || tmux new-session -s blank'
+    alias ga='git add'
+    alias coom='git coomit'
     # skim_key_bindings
 end
