@@ -19,5 +19,12 @@ if status is-interactive
     alias t='tmux attach -t blank || tmux new-session -s blank'
     alias ga='git add'
     alias coom='git coomit'
+    alias cum='git comit'
+    alias glog='git log'
+    alias gs='git status'
+    alias gd='git diff --stat'
+    alias gr='git reset --hard HEAD'
+    alias cummies='git push'
+    alias booba='git pull'
     # skim_key_bindings
 end
