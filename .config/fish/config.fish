@@ -1,5 +1,6 @@
 set fish_greeting ""
 # figlet -n "oida" | cowsay -n
+fastfetch
 set -x EDITOR nvim
 
 if status is-interactive
@@ -19,7 +20,7 @@ if status is-interactive
     alias t='tmux attach -t blank || tmux new-session -s blank'
     alias ga='git add'
     alias coom='git coomit'
-    alias cum='git comit'
+    alias cum='git commit'
     alias glog='git log'
     alias gs='git status'
     alias gd='git diff --stat'
