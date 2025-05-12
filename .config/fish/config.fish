@@ -1,6 +1,5 @@
 set fish_greeting ""
 # figlet -n "oida" | cowsay -n
-fastfetch
 set -x EDITOR nvim
 
 if status is-interactive
