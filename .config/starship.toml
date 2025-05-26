@@ -11,3 +11,9 @@ success_symbol = '[❯](blue)' # The 'success_symbol' segment is being set to '�
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
+[custom.jj]
+command='''starship-jj --ignore-working-copy starship prompt'''
+format = "on [$symbol](blue bold) $output "
+symbol = ""
+when = "jj root --ignore-working-copy"
