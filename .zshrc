@@ -127,3 +127,4 @@ alias nwt="cp -r ~/obsidianschule/latex/template/nwt/* ."
 
 
 if [ -e /home/stefiii/.nix-profile/etc/profile.d/nix.sh ]; then . /home/stefiii/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+. ~/.gns3util-complete.zsh

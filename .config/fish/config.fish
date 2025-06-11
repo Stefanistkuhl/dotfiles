@@ -28,7 +28,15 @@ if status is-interactive
     alias gr='git reset --hard HEAD'
     alias cummies='git push'
     alias booba='git pull'
-    alias dcps="nu -c 'docker compose ps | detect columns'"
-    alias dps="nu -c 'docker ps | detect columns'"
+    # alias dcps="nu -c 'docker compose ps | detect columns'"
+    # alias dps="nu -c 'docker ps | detect columns'"
+    # alias nji="nu --stdin -c 'from json | explore -i'"
+    # alias nj="nu --stdin -c 'from json'"
+    # alias nyi="nu --stdin -c 'from yml | explore -i'"
+    # alias ny="nu --stdin -c 'from yml'"
+    # alias nui="nu --stdin -c 'from url | explore -i'"
+    # alias nu="nu --stdin -c 'from url'"
+    # alias nti="nu --stdin -c 'from toml | explore -i'"
+    # alias nt="nu --stdin -c 'from toml'"
     # skim_key_bindings
 end

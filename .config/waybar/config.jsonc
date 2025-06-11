@@ -4,7 +4,7 @@
     "spacing": 0,
     "height": 34,
     "modules-left": [
-        "hyprland/workspaces"
+        "niri/workspaces"
     ],
     "modules-center": [
         "clock"
@@ -14,6 +14,7 @@
         "memory",
         "pulseaudio",
         "battery",
+	"power-profiles-daemon",
         "custom/power"
     ],
     "wlr/taskbar": {
@@ -24,7 +25,7 @@
         "icon-size": 25,
         "tooltip-format": "{title}"
     },
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
@@ -78,7 +79,7 @@
             "headphone": "",
             "default": ["󰕿","",""]
         },
-        "on-click": "pamixer -t",
+        "on-click": "pwvucontrol",
         "scroll-step": 1
     },
     "battery": {
@@ -111,6 +112,19 @@
             "critical": 10
         },
         "tooltip": false
+    },
+    "power-profiles-daemon": {
+	    "format": "{icon}",
+	    "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+	    "tooltip": true,
+	    "format-icons": {
+		    "default": "",
+		    "performance": "",
+		    "balanced": "",
+		    "power-saver": ""
+	    },
+	"align": 0.5,
+        "justify": "center"
     },
     "custom/power": {
         "format": "",
