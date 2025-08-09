@@ -7,6 +7,7 @@ if status is-interactive
 
     zoxide init --cmd cd fish | source
     starship init fish | source
+    atuin init fish --disable-up-arrow | source
 
     alias clock='tty-clock -sc'
     alias neovim='nvim'
@@ -18,7 +19,7 @@ if status is-interactive
     alias yay='paru'
     alias putty='sudo cu -l /dev/ttyUSB0 -s 9600'
     alias ls='eza'
-    alias t='tmux attach -t blank || tmux new-session -s blank'
+    alias t='bash -c "~/dotfiles/.config/tmux/tmux_startup.sh"'
     alias ga='git add'
     alias coom='git coomit'
     alias cum='git commit'
@@ -28,6 +29,7 @@ if status is-interactive
     alias gr='git reset --hard HEAD'
     alias cummies='git push'
     alias booba='git pull'
+    alias cat='bat'
     # alias dcps="nu -c 'docker compose ps | detect columns'"
     # alias dps="nu -c 'docker ps | detect columns'"
     # alias nji="nu --stdin -c 'from json | explore -i'"
@@ -39,4 +41,10 @@ if status is-interactive
     # alias nti="nu --stdin -c 'from toml | explore -i'"
     # alias nt="nu --stdin -c 'from toml'"
     # skim_key_bindings
+    alias dcub='docker compose up -d --build'
+    alias ddcub='docker compose down && docker compose up -d --build'
+    alias ddcu='docker compose down && docker compose up -d'
+    alias dcu='docker compose up -d'
+    alias dcl='docker compose logs'
+    alias dcd='docker compose down'
 end

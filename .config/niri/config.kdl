@@ -65,7 +65,7 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-1" {
+output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
 
@@ -75,10 +75,10 @@ input {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@120.030"
+    mode "2560x1600"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 2
+    // scale 1.6
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -146,10 +146,10 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -157,10 +157,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#f5c2e7"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#6e6a86"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -169,7 +169,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        active-gradient from="#f5c2e7" to="#ff3e8fb0" angle=45 relative-to="workspace-view"
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -182,15 +182,16 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        width 3
+        active-color "#ea9a97"
+        inactive-color "#6e6a86"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
+        urgent-color "#eb6f92"
 
+        active-gradient from="#f5c2e7" to="#ff3e8fb0" angle=45 relative-to="workspace-view"
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -254,7 +255,8 @@ layout {
 spawn-at-startup "hyprpaper"
 spawn-at-startup "waybar"
 spawn-at-startup "clipse -listen"
-spawn-at-startup "nm-applet & swaync -s ~/.config/swaync/theme/style.css & wayvnc"
+spawn-at-startup "nm-applet"
+spawn-at-startup "swaync -s ~/.config/swaync/theme/style.css & wayvnc"
 spawn-at-startup "systemctl --user start hyprpolkitagent"
 spawn-at-startup "hyprctl setcursor \"Banana\" 24"
 spawn-at-startup "sleep 10 && bash ~/dotfiles/.config/tmux/tmux_startup.sh"
@@ -331,9 +333,19 @@ window-rule {
     open-floating true
 }
 
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+workspace "9"
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -364,6 +376,8 @@ binds {
     Mod+alt+w {spawn "bash" "-c" "pkill -SIGUSR2 waybar";}
     Mod+alt+b {spawn "bash" "-c" "pkill -SIGUSR1 waybar";}
     Mod+v {spawn "bash" "-c" "kitty --class clipse -e clipse";}
+    Mod+shift+n {spawn "bash" "-c" "swaync-client -t -sw";}
+    Mod+shift+s {spawn "bash" "-c" "hyprshot --freeze --mode=region --clipboard-only";}
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -400,15 +414,15 @@ binds {
     Mod+Ctrl+J     { move-window-down; }
     Mod+Ctrl+K     { move-window-up; }
     Mod+Ctrl+L     { move-column-right; }
-    Mod+shift+1 { move-column-to-workspace 1; }
-    Mod+shift+2 { move-column-to-workspace 2; }
-    Mod+shift+3 { move-column-to-workspace 3; }
-    Mod+shift+4 { move-column-to-workspace 4; }
-    Mod+shift+5 { move-column-to-workspace 5; }
-    Mod+shift+6 { move-column-to-workspace 6; }
-    Mod+shift+7 { move-column-to-workspace 7; }
-    Mod+shift+8 { move-column-to-workspace 8; }
-    Mod+shift+9 { move-column-to-workspace 9; }
+    Mod+shift+1 { move-column-to-workspace "1"; }
+    Mod+shift+2 { move-column-to-workspace "2"; }
+    Mod+shift+3 { move-column-to-workspace "3"; }
+    Mod+shift+4 { move-column-to-workspace "4"; }
+    Mod+shift+5 { move-column-to-workspace "5"; }
+    Mod+shift+6 { move-column-to-workspace "6"; }
+    Mod+shift+7 { move-column-to-workspace "7"; }
+    Mod+shift+8 { move-column-to-workspace "8"; }
+    Mod+shift+9 { move-column-to-workspace "9"; }
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
@@ -506,24 +520,15 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+1 { focus-workspace "1"; }
+    Mod+2 { focus-workspace "2"; }
+    Mod+3 { focus-workspace "3"; }
+    Mod+4 { focus-workspace "4"; }
+    Mod+5 { focus-workspace "5"; }
+    Mod+6 { focus-workspace "6"; }
+    Mod+7 { focus-workspace "7"; }
+    Mod+8 { focus-workspace "8"; }
+    Mod+9 { focus-workspace "9"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
