@@ -9,6 +9,7 @@
 }
 
 window#waybar {
+  /* background-color: @surface; */
   background-color: @surface;
   transition-property: background-color;
   transition-duration: 0.5s;

@@ -9,6 +9,7 @@ if status is-interactive
     starship init fish | source
     atuin init fish --disable-up-arrow | source
 
+    abbr ip 'ip -c'
     alias owo='sudo'
     alias uwu='sudo'
     alias pwease='sudo'
@@ -19,8 +20,8 @@ if status is-interactive
     alias v='nvim'
     alias vim='nvim'
     alias vd='cd /home/stefiii/dotfiles && nvim .'
-    alias ff='hyfetch -b fastfetch'
-    alias :3='hyfetch -b fastfetch'
+    alias ff='hyfetch'
+    alias :3='hyfetch'
     alias yay='paru'
     alias putty='sudo cu -l /dev/ttyUSB0 -s 9600'
     alias ls='eza'
