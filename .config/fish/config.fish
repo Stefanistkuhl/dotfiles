@@ -31,4 +31,8 @@ if status is-interactive
     alias gs='git status'
     alias gd='git diff --stat'
     alias cat='bat'
+    alias rec='asciinema rec'
+    alias rec='asciinema rec'
+    alias play='asciinema play'
+    alias stream='asciinema stream -r'
 end

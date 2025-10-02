@@ -1,19 +1,41 @@
-
 [window]
-title = "tiger"
-opacity = 0.69
+title = "Screenshot Terminal"
+opacity = 1.0
 
 [font]
 size = 12
 normal = { family = "Jetbrains Mono", style = "mono" }
 
 [general]
-live_config_reload = true
-import = [ "/home/stefiii/.config/alacritty/rose-pine-moon.toml" ]
-
-[terminal]
+live_config_reload = false
 
 [terminal.shell]
-program = "/usr/bin/tmux"
+program = "/usr/bin/fish"
+args = ["--init-command=source ~/.config/fish/config_screenshot.fish"]
 
+# ----------------------------
+# Pure ANSI Color Palette
+# ----------------------------
+[colors.primary]
+background = "#FFFFFF" # WHITE background
+foreground = "#000000" # BLACK text
 
+[colors.normal]
+black   = "#000000"
+red     = "#FF0000"
+green   = "#00AA00"   # darker green (more visible than neon)
+yellow  = "#CC8800"   # darker yellow → readable on white
+blue    = "#0000FF"
+magenta = "#AA00AA"
+cyan    = "#00AAAA"
+white   = "#AAAAAA"   # light gray instead of pure white to remain visible
+
+[colors.bright]
+black   = "#555555"
+red     = "#FF0000"
+green   = "#00CC00"
+yellow  = "#CC8800"   # same darker yellow
+blue    = "#0000FF"
+magenta = "#CC00CC"
+cyan    = "#00CCCC"
+white   = "#000000"   # invert bright white to black (extra contrast)
