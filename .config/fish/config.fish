@@ -5,6 +5,8 @@ set -x GOPATH ~/.go
 
 if status is-interactive
 
+    fish_vi_key_bindings
+
     zoxide init --cmd cd fish | source
     starship init fish | source
     atuin init fish --disable-up-arrow | source
@@ -35,4 +37,7 @@ if status is-interactive
     alias rec='asciinema rec'
     alias play='asciinema play'
     alias stream='asciinema stream -r'
+    alias k='kubectl'
+    alias g='gns3util'
+    alias gr='go run .'
 end
