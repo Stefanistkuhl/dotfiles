@@ -3,6 +3,8 @@ set fish_greeting ""
 set -x EDITOR nvim
 set -x GOPATH ~/.go
 
+bind -M insert alt-m accept-autosuggestion
+
 if status is-interactive
 
     fish_vi_key_bindings
@@ -40,4 +42,5 @@ if status is-interactive
     alias k='kubectl'
     alias g='gns3util'
     alias gr='go run .'
+    alias uuid="python3 -c 'import uuid; print(uuid.uuid4())'"
 end
