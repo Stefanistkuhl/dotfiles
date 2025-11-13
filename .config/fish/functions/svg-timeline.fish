@@ -32,7 +32,7 @@ function svg-timeline
     echo "Opening http://localhost:$port"
     
     # Hardcoded path to svg-term-cli directory
-    set project_dir "/home/stefiii/coding/ermgamba3/svg-term-cli"
+    set project_dir "/home/veya/coding/ermgamba3/svg-term-cli"
     
     # Verify the directory exists and contains timeline-server.ts
     if not test -d "$project_dir"

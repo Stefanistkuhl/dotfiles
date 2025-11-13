@@ -23,7 +23,7 @@ if status is-interactive
     alias neovim='nvim'
     alias v='nvim'
     alias vim='nvim'
-    alias vd='cd /home/stefiii/dotfiles && nvim .'
+    alias vd='cd /home/veya/dotfiles && nvim .'
     alias ff='hyfetch'
     alias :3='hyfetch'
     alias yay='paru'

@@ -8,8 +8,8 @@ font:
   size: 20
 
 shell:
-  program: /home/stefiii/.nix-profile/bin/tmux 
+  program: /home/veya/.nix-profile/bin/tmux 
 
 import:
-  - /home/stefiii/.config/alacritty/rose-pine-moon.yml
+  - /home/veya/.config/alacritty/rose-pine-moon.yml
 

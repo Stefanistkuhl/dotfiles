@@ -3,7 +3,7 @@
 set -g localDir ~/coding
 set -g remoteDir ~/coding
 set -g idiotSafeGuard true
-set -g host "stefiii@10.0.0.166"
+set -g host "veya@10.0.0.166"
 set -g upload false
 
 function usage
