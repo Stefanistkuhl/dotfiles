@@ -46,4 +46,4 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/veya/\x2elocal/bin\x1e/home/veya/\x2ecargo/bin\x1e/home/veya/\x2enix\x2dprofile/bin
+SETUVAR fish_user_paths:/home/veya/\x2ego/bin\x1e/home/veya/\x2elocal/bin\x1e/home/veya/\x2ecargo/bin\x1e/home/veya/\x2enix\x2dprofile/bin

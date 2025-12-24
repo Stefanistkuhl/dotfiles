@@ -2,6 +2,7 @@ set fish_greeting ""
 # figlet -n "oida" | cowsay -n
 set -x EDITOR nvim
 set -x GOPATH ~/.go
+set -x DOCKER_HOST unix://$XDG_RUNTIME_DIR/podman/podman.sock
 
 bind -M insert alt-m accept-autosuggestion
 
@@ -36,11 +37,11 @@ if status is-interactive
     alias gd='git diff --stat'
     alias cat='bat'
     alias rec='asciinema rec'
-    alias rec='asciinema rec'
     alias play='asciinema play'
     alias stream='asciinema stream -r'
     alias k='kubectl'
     alias g='gns3util'
     alias gr='go run .'
     alias uuid="python3 -c 'import uuid; print(uuid.uuid4())'"
+    alias p='podman'
 end
